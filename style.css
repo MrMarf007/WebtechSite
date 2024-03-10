@@ -53,6 +53,7 @@ html {
 .title, .content__title {
     font-style: normal;
     text-align: center;
+    font-size: 1.7rem;
 }
 
 .centered-text {
@@ -62,6 +63,7 @@ html {
 .content__text-header {
     font-style: normal;
     padding-left: 10px;
+    margin-top: 3rem;
 }
 
 .content {
@@ -72,7 +74,7 @@ html {
 }
 
 .content__quote-text {
-    font-style: italic;
+    font-size: 1.1rem;
 }
 
 .content__img_and_text {
@@ -91,11 +93,10 @@ html {
 
 .content__side_text {
     text-align: justify;
+    display: block;
+    font-size: 1.2rem;
 }
 
-.content__side_text {
-    display: block;
-}
 
 .section__centerElements {
     text-align: center;

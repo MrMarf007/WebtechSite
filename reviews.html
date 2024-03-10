@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="A small informational website about the book Pride and Prejudice by Jane Austen">
+        <meta name="keywords" content="Book, Reading, Pride and Prejudice, Jane Austen">
+        <meta name="author" content="Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts.js" async></script>
+        <title>Pride and Prejudice - Reviews</title>
+    </head>
+    <body class="body"  onload="loadFunction('Reviews')">
+        <header class="header">
+            <h1 class="title">Pride and Prejudice by Jane Austen</h1>
+        </header>
+        <nav class="navBar">
+            <a class="nav__elem" href="index.html">Home</a>
+            <a class="nav__elem" href="info.html">Info</a>
+            <a class="nav__elem" href="more.html">More</a>
+            <a class="nav__elem" href="author.html">Author</a>
+            <a class="nav__elem" href="reviews.html">Reviews</a>
+        </nav>
+        <article class="content content_reviews">
+            <h2 class="content__title">Reviews</h2>
+
+            <figure class="content__table_reviews">
+                <table class="table table__reviews">
+                    <tbody>
+                    <tr class="table__row">
+                        <td class="table__cell">
+                        Minnie
+                        </td>
+                        <td class="table__cell table__cell__stars">
+                        ★★★★★
+                        </td>
+                        <td class="table__cell table__cell__review">
+                        I recently delved into Jane Austen's "Pride and Prejudice," and I
+                        must say it exceeded my expectations. The novel masterfully weaves
+                        a tale of love, societal expectations, and personal growth in the
+                        Regency era. Austen's wit and keen observations on human nature
+                        are evident throughout the narrative, making the characters come
+                        alive with their flaws and virtues. Elizabeth Bennet, with her
+                        intelligence and independence, is a protagonist ahead of her time,
+                        and Mr. Darcy's journey from pride to humility adds depth to the
+                        storyline.The social commentary on class, marriage, and manners
+                        remains relevant, making this novel a timeless exploration of the
+                        human condition. The elegant prose and engaging dialogue
+                        contribute to an immersive reading experience.For anyone seeking a
+                        captivating story with rich character development and societal
+                        insights, "Pride and Prejudice" is a must-read classic that
+                        continues to resonate with readers across generations.
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">
+                        Chaitanya
+                        </td>
+                        <td class="table__cell table__cell__stars">
+                        ★★★★★
+                        </td>
+                        <td class="table__cell table__cell__review">
+                        Love it, love it, love it! Excellent book. It will keep you glued
+                        till the very end. You'll be left wanting for more by the time you
+                        finish this. Language can be a bit tricky, nothing a dictionary
+                        app cannot fix. The acrid language, piercing detail and the vivid
+                        picturization make this a worthwhile read. I'll probably read it
+                        again and again many times just for the pure joy of reading -
+                        there is something of nice and pleasant flow of her language.
+            
+                        Now as for book and printing - very nice. The font used is Sabon
+                        instead of something ghastly like Times New Roman. Text size is
+                        quite comfortable. Paper quality is nice and has a smooth texture
+                        to it, although people accustomed to the bright off-white pages
+                        might be a bit disappointed at the not so bright pages. So my
+                        suggestion is to buy the penguin edition.
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">
+                        Coleen Wolfe
+                        </td>
+                        <td class="table__cell table__cell__stars">
+                        ★★★★
+                        </td>
+                        <td class="table__cell table__cell__review">
+                        I have seen all 3 of the movies made from this period piece. It
+                        was interesting to see just how many words are needed to describe
+                        a conversation. Reading this revealed to me that I indeed like
+                        things to get to the point. Not necessarily a good character. I do
+                        love the story and am glad to have revisited this book. I will
+                        need to wait awhile before I grab another one of hers. Although I
+                        did read Mansfield Park while traveling in England in the 80’s and
+                        it was a terrific train read.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </figure>
+
+
+            <h2 class="form__title">Share your thoughts and leave a review!</h2>
+            <form class="form__reviews" action="submitReview.php" method="post">
+                <label class="form__label" for="name">Name:</label>
+                <input class="form__input" type="text" id="name" name="name" required>
+                <label class="form__label" for="rating">Rating:</label>
+                <select class="form__input-rating" id="rating" name="rating" required>
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select>
+                <label class="form__label" for="review">Review:</label>
+                <textarea class="form__input" id="review" name="review" required></textarea>
+                <input class="form__submit" type="submit" value="Submit">
+            </form>
+
+        </article>
+        <footer class="footer">
+            <p>Created by Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef</p>
+        </footer>
+    </body>
+</html>

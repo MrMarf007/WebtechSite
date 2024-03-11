@@ -137,6 +137,13 @@ html {
     align-items: center;
 }
 
+.book-info__side-text {
+    margin: 20px;
+    text-align: justify;
+    display: block;
+    font-size: 1.2rem;
+}
+
 .book-info__recommendation {
     transition: linear 0.2s;
     text-decoration: none;

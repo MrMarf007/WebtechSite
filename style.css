@@ -70,11 +70,10 @@ html {
 .content {
     max-width: 800px;
     margin: 20px auto 90px auto;
-    padding: 0 20px;
 }
 
 .content_reviews {
-    max-width: 90%;
+    max-width: 85%;
 }
 
 .content__quote-text {

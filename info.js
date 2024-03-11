@@ -33,6 +33,26 @@ class Book extends CreativeWork {
         this.coverURL = coverURL;
         this.plot = plot;
     }
+
+    get plot() {
+        return this._plot;
+    }
+
+    set plot(plot) {
+        this._plot = plot;
+    }
+
+    get info() {
+        return {
+            title: this.title,
+            authors: this.authors,
+            year: this.year,
+            genre: this.genre,
+            pages: this.pages,
+            publisher: this.publisher,
+            coverURL: this.coverURL
+        }
+    }
 }
 
 class Author extends Person {
@@ -76,16 +96,23 @@ function infoPage() {
     title.textContent = "Pride and Prejudice book information";
     title.setAttribute("class", "content__title");
     contentArticle.appendChild(title);
-    contentArticle.appendChild(parseBookInfo(book));
+    contentArticle.appendChild(parseBookInfo(book.info));
+        console.log("Book info loaded.");  
     contentArticle.appendChild(parseStringToHTML(intro));
+        console.log("Intro loaded.");
     contentArticle.appendChild(parseStringToHTML(book.plot));
+        console.log("Plot loaded.");
     contentArticle.appendChild(parseStringToHTML(review));
+        console.log("Review loaded.");
     contentArticle.appendChild(parseStringToHTML(readMore));
+        console.log("Read more loaded.");
+
+    console.log("Info page content loaded.");
 }
 
 function parseStringToHTML(str) {
-    let paragraphs = str.split("\n");
-    let result = document.createElement("section");
+    const paragraphs = str.split("\n");
+    const result = document.createElement("section");
     for (elem in paragraphs) {
         // console.log(paragraphs[elem]);
         let node, type, content, assignedClass, child, childInfo;
@@ -129,39 +156,39 @@ function parseStringToHTML(str) {
     return result;
 }
 
-function parseBookInfo(book) {
-    let result = document.createElement("div");
+function parseBookInfo(bookInfo) {
+    const result = document.createElement("div");
     result.setAttribute("class", "book-info");
 
-    let image = document.createElement("img");
+    const image = document.createElement("img");
     image.setAttribute("class", "book-info__img");
-    image.setAttribute("src", book.coverURL);
+    image.setAttribute("src", bookInfo.coverURL);
     image.setAttribute("alt", "The cover of the book Pride and Prejudice");
 
-    let sideText = document.createElement("div");
+    const sideText = document.createElement("div");
     sideText.setAttribute("class", "book-info__side-text");
     authors = document.createElement("p");
     authors.textContent = "Authors: ";
-    for (i in book.authors) {
+    for (i in bookInfo.authors) {
         if (i > 0) { Authors.textContent += ", "; }
-        authors.textContent += book.authors[i].name;
+        authors.textContent += bookInfo.authors[i].name;
     }
     sideText.appendChild(authors);
 
-    let year = document.createElement("p");
-    year.textContent = "Publishing year: " + book.year;
+    const year = document.createElement("p");
+    year.textContent = "Publishing year: " + bookInfo.year;
     sideText.appendChild(year);
 
-    let genre = document.createElement("p");
-    genre.textContent = "Genre: " + book.genre;
+    const genre = document.createElement("p");
+    genre.textContent = "Genre: " + bookInfo.genre;
     sideText.appendChild(genre);
 
-    let pages = document.createElement("p");
-    pages.textContent = "Pages: " + book.pages;
+    const pages = document.createElement("p");
+    pages.textContent = "Pages: " + bookInfo.pages;
     sideText.appendChild(pages);
 
-    let publisher = document.createElement("p");
-    publisher.textContent = "Publisher: " + book.publisher.name;
+    const publisher = document.createElement("p");
+    publisher.textContent = "Publisher: " + bookInfo.publisher.name;
     sideText.appendChild(publisher);
 
     result.appendChild(image);

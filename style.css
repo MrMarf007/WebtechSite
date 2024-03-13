@@ -367,17 +367,18 @@ html {
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 150px;
     background-color: black;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 10px 10px;
+    padding: 10px 20px;
     position: absolute;
     z-index: 1;
     bottom: 100%;
-    left: 50%;
+    left: 35%;
     margin-left: -60px;
+    font-size: 0.9rem;
   }
   
   .tooltip .tooltiptext::after {

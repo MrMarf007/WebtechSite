@@ -91,61 +91,70 @@ function changeFontSizeLarge()
     }
 
 function changeColorText() 
-    {
+    {   
+        textCol = window.getComputedStyle(document.querySelector('.content__title')).getPropertyValue("--text-color");
+        var currentColor = window.getComputedStyle(document.querySelector('.content__title')).textDecorationColor;
 
-        var currentColor = document.querySelector('.title').style.color;
+        console.log("curcol: " + currentColor);
+        console.log("textcol: " + textCol);
 
-        if (currentColor === "blue") 
+        if (currentColor == "rgb(0, 0, 255)") 
         {
-            document.querySelectorAll('.title, .content__title, .nav__elem').forEach(function (element) {
-                element.style.color = "black";
+
+            document.querySelectorAll('.book-info__text').forEach(function (element) {
+                element.style.color = textCol;
             });
     
-            document.querySelectorAll('p').forEach(function (element) {
-                element.style.color = "black";
-            });
+            document.querySelector('.body').style.color = textCol;
+
+            // document.querySelectorAll('.content__title').forEach(function (element) {
+            //     element.style.color = textCol;
+            // });
     
-            document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function (element) {
-                element.style.color = "black";
-            });
+            // document.querySelectorAll('p').forEach(function (element) {
+            //     element.style.color = textCol;
+            // });
     
-            document.querySelectorAll('a').forEach(function (element) {
-                element.style.color = "black";
-            });
+            // // document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function (element) {
+            // //     element.style.color = textCol;
+            // // });
     
-            document.querySelectorAll('li').forEach(function (element) {
-                element.style.color = "black";
-            });
+            // document.querySelectorAll('a').forEach(function (element) {
+            //     element.style.color = textCol;
+            // });
     
-            document.querySelector('.body').style.color = "black";
+            // document.querySelectorAll('li').forEach(function (element) {
+            //     element.style.color = textCol;
+            // });
     
-            document.querySelector('.navBar').style.color = "black";
+            // document.querySelector('.navBar').style.color = textCol;
         }
-        else
+        else if (currentColor === textCol)
         {
-            document.querySelectorAll('.title, .content__title, .nav__elem').forEach(function (element) {
-                element.style.color = "blue";
+
+            document.querySelectorAll('.book-info__text').forEach(function (element) {
+                element.style.color = "rgb(0, 0, 255)";
             });
+    
+            document.querySelector('.body').style.color = "rgb(0, 0, 255)";
+
+            // document.querySelectorAll('.content__title').forEach(function (element) {
+            //     element.style.color = "#0000FF";
+            // });
             
-            document.querySelectorAll('p').forEach(function (element) {
-                element.style.color = "blue";
-            });
+            // document.querySelectorAll('p').forEach(function (element) {
+            //     element.style.color = "#0000FF";
+            // });
     
-            document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function (element) {
-                element.style.color = "blue";
-            });
+            // document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function (element) {
+            //     element.style.color = "#0000FF";
+            // });
     
-            document.querySelectorAll('a').forEach(function (element) {
-                element.style.color = "blue";
-            });
+            // document.querySelectorAll('a').forEach(function (element) {
+            //     element.style.color = "#0000FF";
+            // });
     
-            document.querySelectorAll('li').forEach(function (element) {
-                element.style.color = "blue";
-            });
-    
-            document.querySelector('.body').style.color = "blue";
-    
-            document.querySelector('.navBar').style.color = "blue";
+            // document.querySelector('.navBar').style.color = "#0000FF";
         }
     }
 

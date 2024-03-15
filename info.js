@@ -88,7 +88,7 @@ function infoPage() {
         "Romance",
         435,
         publisher,
-        "Content/pride-and-prejudice-cover.jpg",
+        "Content/Pride-and-Prejudice-final-pic.jpg",
         plot
         )
     
@@ -160,20 +160,34 @@ function parseBookInfo(bookInfo) {
     const result = document.createElement("div");
     result.setAttribute("class", "book-info");
 
-    const image = document.createElement("img");
+    const image = document.createElement("img");    
     image.setAttribute("class", "book-info__img");
     image.setAttribute("src", bookInfo.coverURL);
     image.setAttribute("alt", "The cover of the book Pride and Prejudice");
 
+
     const sideText = document.createElement("div");
     sideText.setAttribute("class", "book-info__side-text");
-    authors = document.createElement("p");
+
+    const sideText_author = document.createElement("div");
+    sideText_author.setAttribute("class", "tooltip");
+    sideText.appendChild(sideText_author);
+    const authors = document.createElement("p");
     authors.textContent = "Authors: ";
     for (i in bookInfo.authors) {
         if (i > 0) { Authors.textContent += ", "; }
         authors.textContent += bookInfo.authors[i].name;
     }
-    sideText.appendChild(authors);
+    sideText_author.appendChild(authors);
+
+    const span_author = document.createElement("span");
+    span_author.setAttribute("class", "tooltiptext");
+    sideText_author.appendChild(span_author);
+
+    const tooltiptext_author = document.createElement("p");
+    tooltiptext_author.textContent = "Jane Austen, the author of the book Pride and Prejudice. Born December 16, 1775 and lived until July 18, 1817. She was an English writer of classic novels.";
+    span_author.appendChild(tooltiptext_author);
+
 
     const year = document.createElement("p");
     year.textContent = "Publishing year: " + bookInfo.year;
@@ -187,12 +201,29 @@ function parseBookInfo(bookInfo) {
     pages.textContent = "Pages: " + bookInfo.pages;
     sideText.appendChild(pages);
 
+
+    const sideText_publisher = document.createElement("div");
+    sideText_publisher.setAttribute("class", "tooltip");
+    sideText.appendChild(sideText_publisher);
+
+    const span_publisher = document.createElement("span");
+    span_publisher.setAttribute("class", "tooltiptext");
+    sideText_publisher.appendChild(span_publisher);
+
     const publisher = document.createElement("p");
     publisher.textContent = "Publisher: " + bookInfo.publisher.name;
-    sideText.appendChild(publisher);
+    sideText_publisher.appendChild(publisher);
+    sideText_publisher.appendChild(span_publisher);
+
+
+    const tooltiptext_publisher = document.createElement("p");
+    tooltiptext_publisher.textContent = "Thomas Egerton, the publisher of the book Pride and Prejudice. Born the 23d of January 1540, and lived until the 15th of March 1617. He was an English nobleman, judge and statesman from the Egerton family.";
+    span_publisher.appendChild(tooltiptext_publisher);
+    
 
     result.appendChild(image);
     result.appendChild(sideText);
 
     return result;
 }
+

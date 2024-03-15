@@ -1,10 +1,11 @@
 :root {
-    --accent-color: #B67352;
-    --accent-color-light: #ECB159;
-    --accent-color-alt: #8CB9BD;
-    --accent-color-alt-dark: #5C7D7E;
-    --background-color: #FEFBF6;
-    /*--text-color: #000;*/
+    --accent-color:            rgba(12, 45, 57, 1);
+    --accent-color-alt:        rgb(28, 56, 63);
+    --accent-color-light:      rgb(71, 112, 121);
+    --accent-color-alt-dark:   rgb(123, 113, 80);
+    --background-color:        rgb(218, 210, 188);
+    --background-color-light:  rgb(222, 222, 220);
+    --text-color:              rgb(9, 37, 48);
 }
 
 html {
@@ -21,12 +22,14 @@ html {
     flex-direction: column;
     background-color: var(--background-color);
     overflow: hidden scroll;
+    font-size: 1.15rem;
+    color: var(--text-color);
 }
 
 .header {
     width: 100vw;
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--background-color-light);
     padding: 10px 0 2px 0;
     text-align: center;
 }
@@ -45,9 +48,9 @@ html {
     width: 100%;
     bottom: 0;
     background-color: var(--accent-color);
-    color: var(--background-color);
-    /*margin: 15px 0 0 0;
-    padding: 10px 0 2px 0;*/
+    color: var(--background-color-light);
+    margin: 15px 0 0 0;
+    padding: 10px 0 2px 0;
     border-top: 5px solid var(--accent-color-light);
     text-align: center;
 }
@@ -60,6 +63,7 @@ html {
 
 .centered-text {
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .content__text-header {
@@ -98,7 +102,6 @@ html {
 .content__side_text {
     text-align: justify;
     display: block;
-    font-size: 1.2rem;
 }
 
 
@@ -117,8 +120,8 @@ html {
     font-size: 15px;
     font-weight: bold;
 
-    background-color: var(--accent-color-alt);
-    color: var(--background-color);
+    background-color: var(--accent-color-light);
+    color: var(--background-color-light);
     text-align: center;
 
     display: inline-block;
@@ -128,7 +131,7 @@ html {
     transition: linear 0.2s;
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px var(--text-color);
-    background-color: var(--accent-color-alt-dark);
+    background-color: var(--accent-color-alt);
 }
 
 .book-info {
@@ -142,6 +145,7 @@ html {
     margin: 20px;
     text-align: justify;
     display: block;
+
 }
 
 .book-info__recommendation {
@@ -150,6 +154,7 @@ html {
     color: var(--text-color);
     max-width: 100%;
     margin: 20px;
+    font-size: 0.9rem;
 }
 
 .book-info__recommendation:hover {
@@ -180,7 +185,7 @@ html {
     font-weight: bold;
 
     background-color: var(--accent-color-alt);
-    color: var(--background-color);
+    color: var(--background-color); 
     text-align: center;
 
     border: #000 1px solid;
@@ -220,20 +225,20 @@ html {
 
 .in-page-link:hover {
     background-color: var(--accent-color-alt);
-    color: var(--background-color);
+    color: var(--background-color-light);
 }
 
 .content__credits {
     text-decoration: none;
     font-size: smaller;
     margin-left: 25px;
-    color: var(--accent-color-alt);
+    color: var(--accent-color-light);
 }
 
 
 .nav__elem {
     display: inline-block;
-    color: var(--background-color);
+    color: var(--background-color-light);
     text-decoration: none;
     font-size: larger;
     margin: 0 10px;
@@ -254,10 +259,11 @@ html {
     max-width: 1200px;
     overflow-x: auto;
     align-items: center;
-    font-size: 16px;
     text-align: center;
     padding:10px 5px;
     margin: 0;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
 }
 
 .form__reviews {
@@ -269,7 +275,7 @@ html {
     padding:10px 5px;
     margin: 20px auto 100px auto;
 
-    background-color: var(--accent-color-alt);
+    background-color: var(--accent-color-light);
     border-radius: 15px;
 }
 
@@ -293,7 +299,7 @@ html {
 }
 
 .form__input-rating {
-    color: var(--accent-color-light);
+    color: var(--accent-color);
     width: auto;
     /*height: 100%;*/
     margin: 0 auto;
@@ -309,8 +315,8 @@ html {
     padding: 10px 10px;
     font-size: 15px;
     font-weight: bold;
-    background-color: var(--accent-color-alt-dark);
-    color: var(--background-color);
+    background-color: var(--accent-color);
+    color: var(--background-color-light);
     text-align: center;
     display: inline-block;
     border: none;
@@ -321,6 +327,7 @@ html {
     /*font-size:14px;*/
     border-collapse:collapse;
     border-spacing:0;
+    margin-bottom: 3rem;
 }
 
 .table__reviews {
@@ -354,7 +361,45 @@ html {
 .table__head {
     padding:10px 5px;
     background-color:var(--accent-color-alt);
-    color: var(--background-color);
+    color: var(--background-color-light);
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px black;
+  }
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: var(--accent-color-light);
+    color: var(--background-color-light);
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 35%;
+    margin-left: -60px;
+    font-size: 0.9rem;
+ }
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 @media only screen and (max-width: 600px) {

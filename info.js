@@ -88,7 +88,7 @@ function infoPage() {
         "Romance",
         435,
         publisher,
-        "Content/pride-and-prejudice-cover.jpg",
+        "Content/Pride-and-Prejudice-final-pic.jpg",
         plot
         )
     

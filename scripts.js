@@ -9,6 +9,7 @@ function loadFunction(page)
         });
     }
 
+// loop through elements and change their font-size to either small, medium or large
 function changeFontSizeSmall()
     {
         document.querySelectorAll('.title, .content__title, .nav__elem').forEach(function (element) {
@@ -90,6 +91,7 @@ function changeFontSizeLarge()
         document.querySelector('.navBar').style.fontSize = "large";
     }
 
+// retrieve the current text-color and use it as a reference point to toggle text-color to blue or #092530
 function changeColorText() 
     {   
         textCol = window.getComputedStyle(document.querySelector('.content__title')).getPropertyValue("--text-color");

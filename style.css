@@ -97,6 +97,8 @@ html {
     max-width: 200px;
     margin: 20px;
     height: auto;
+    position: relative;
+    z-index: -1;
 }
 
 .content__side_text {
@@ -400,6 +402,18 @@ html {
   
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+#small{
+    margin-left: 0.5rem;
+}
+
+#large{
+    margin-right: 0.5rem;
+}
+
+#changeColor{
+    margin-left: 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {

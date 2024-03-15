@@ -97,8 +97,8 @@ function changeColorText()
         textCol = window.getComputedStyle(document.querySelector('.content__title')).getPropertyValue("--text-color");
         var currentColor = window.getComputedStyle(document.querySelector('.content__title')).textDecorationColor;
 
-        console.log("curcol: " + currentColor);
-        console.log("textcol: " + textCol);
+        // console.log("curcol: " + currentColor);
+        // console.log("textcol: " + textCol);
 
         if (currentColor == "rgb(0, 0, 255)") 
         {

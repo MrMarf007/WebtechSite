@@ -97,6 +97,8 @@ html {
     max-width: 200px;
     margin: 20px;
     height: auto;
+    position: relative;
+    z-index: -1;
 }
 
 .content__side_text {

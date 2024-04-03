@@ -35,6 +35,7 @@ html {
 }
 
 .navBar {
+    z-index: 999;
     background-color: var(--accent-color);
     text-align: center;
     top: 0;
@@ -404,6 +405,60 @@ html {
     visibility: visible;
 }
 
+.catalogue {
+    display: grid;
+    max-width: 800px;
+    height: fit-content;
+    margin: 20px auto 100px auto;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.catalogue__book {
+    height: 250px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 8px 0px var(--accent-color-alt);
+    border-radius: 5px;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.catalogue__book_img {
+    max-height: 230px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.catalogue__book_text {
+    position: relative;
+    text-align: left;
+    height: 90%;
+    margin: 10px;
+}
+
+.catalogue__book_button {
+    color: var(--background-color-light);
+    background-color: var(--accent-color-alt);
+    border: none;
+    position: absolute;
+    right: 6%;
+    bottom: 5%;
+    height: 15%;
+    width: 40%;
+}
+
+.catalogue__book_button:hover {
+    background-color: var(--accent-color-light);
+}
+
+.catalogue__book_button:active {
+    background-color: var(--accent-color-alt-dark);
+}
+
 #small{
     margin-left: 0.5rem;
 }
@@ -421,9 +476,36 @@ html {
         grid-template-columns: 1fr;
     }
 
+    .catalogue {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogue__book {
+        height: fit-content;
+        padding: 10px 0;
+        margin-bottom: 50px;
+        
+    }
+
+    .catalogue__book_button {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        top: 112%;
+        left: 0;
+        margin: 15px 0;
+        height: 50px;
+        align-self: center;
+        margin: 20px 0 0 0;
+        padding: 0;
+        box-shadow: 0px 0px 8px 0px var(--accent-color-alt);
+        border-radius: 0 0 5px 5px;
+    }
+
     .content__img_and_text {
         grid-template-columns: 1fr;
     }
+
 
     .content {
         max-width: 90%;

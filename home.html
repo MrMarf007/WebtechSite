@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="A small informational website about the book Pride and Prejudice by Jane Austen">
+        <meta name="keywords" content="Book, Reading, Pride and Prejudice, Jane Austen">
+        <meta name="author" content="Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts.js" async></script>
+        <script src="catalogue.js" async></script>
+        <title>Pride and Prejudice - Info</title>
+    </head>
+    <body class="body"  onload="loadFunction('Home'); cataloguePage()">
+        <header class="header">
+            <h1 class="title">Pride and Prejudice by Jane Austen</h1>
+        </header>
+        <nav class="navBar">
+            <a class="nav__elem" href="index.html">Home</a>
+            <a class="nav__elem" href="info.html">Info</a>
+            <a class="nav__elem" href="more.html">More</a>
+            <a class="nav__elem" href="author.html">Author</a>
+            <a class="nav__elem" href="reviews.html">Reviews</a>
+        </nav>
+        <article class="content">
+            <div class="catalogue" id="catalogue">
+                <!-- <div class="catalogue__book">
+                    <img class="catalogue__book_img" src="Content/pride-and-prejudice-cover.jpg">
+                    <div class="catalogue__book_text">
+                        <p>Title: Book 1</p>
+                        <p>Author: Author 1</p>
+                    </div>
+                    <button class="catalogue__book_button" onclick="catalogueButton()">Read more</button>
+                </div> -->
+            </div>
+        </article>
+        <footer class="footer">
+            <p>Created by Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef</p>
+        </footer>
+    </body>
+</html>

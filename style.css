@@ -35,7 +35,6 @@ html {
 }
 
 .navBar {
-    z-index: 999;
     background-color: var(--accent-color);
     text-align: center;
     top: 0;
@@ -269,7 +268,7 @@ html {
     margin-top: 2rem;
 }
 
-.form__reviews {
+.form__reviews, .form__login {
     display: grid;
     max-width: 800px;
     align-items: center;
@@ -281,6 +280,7 @@ html {
     background-color: var(--accent-color-light);
     border-radius: 15px;
 }
+
 
 .form__title {
     font-style: normal;
@@ -505,7 +505,6 @@ html {
     .content__img_and_text {
         grid-template-columns: 1fr;
     }
-
 
     .content {
         max-width: 90%;

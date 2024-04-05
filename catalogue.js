@@ -1,6 +1,5 @@
 async function cataloguePage() {
     let catalogue = document.getElementById("catalogue");
-    console.log("catalogue");
     const bookRequest = await fetch('http://webtech.science.uu.nl/group28/books?page=' + 1 + '&length=' + 8)
         .then(response => response.json())
         .then(data => {
@@ -15,10 +14,9 @@ async function cataloguePage() {
 
         let img = document.createElement("img");
         img.setAttribute("class", "catalogue__book_img");
-        let url = book.title.toLowerCase().replace(/ /g, '-') + "-cover.jpg";
-        if (book.cover != '') {
-            url = book.cover;
-        }
+        let url = '';
+        if (book.cover != '') { url = book.cover; }
+        else { url = book.title.toLowerCase().replace(/ /g, '-') + "-cover.jpg"; }
         img.setAttribute("src", url);
         img.setAttribute("alt", book.title + " cover");
         bookDiv.appendChild(img);

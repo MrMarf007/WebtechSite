@@ -37,7 +37,6 @@ async function cataloguePage() {
         moreButton.textContent = "Read more";
         bookDiv.appendChild(moreButton);
         
-        console.log(bookDiv);
         catalogue.appendChild(bookDiv);
     }
 }

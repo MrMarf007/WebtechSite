@@ -429,7 +429,7 @@ html {
 }
 
 .catalogue__book_img {
-    max-height: 230px;
+    height: 230px;
     margin: 0 auto;
     border-radius: 5px;
 }
@@ -492,7 +492,7 @@ html {
         z-index: 1;
         position: absolute;
         width: 100%;
-        top: 112%;
+        top: 225px;
         left: 0;
         margin: 15px 0;
         height: 50px;

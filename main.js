@@ -46,6 +46,30 @@ app.get("/catalogue.html", (req, res) => {
     res.sendFile(__dirname + "/views/catalogue.html");
 });
 
+app.get("/info.html", (req, res) => {
+    res.sendFile(__dirname + "/views/info.html");
+});
+
+app.get("/more.html", (req, res) => {
+    res.sendFile(__dirname + "/views/more.html");
+});
+
+app.get("/author.html", (req, res) => {
+    res.sendFile(__dirname + "/views/author.html");
+});
+
+app.get("/reviews.html", (req, res) => {
+    res.sendFile(__dirname + "/views/reviews.html");
+});
+
+app.get("/login.html", (req, res) => {
+    res.sendFile(__dirname + "/views/login.html");
+});
+
+app.get("/links.html", (req, res) => {
+    res.sendFile(__dirname + "/views/links.html");
+});
+
 app.get("/books", (req, res) => {
     try {
         let page = 1        // default page number
@@ -71,30 +95,6 @@ app.get("/books", (req, res) => {
     } catch (error) {
         return res.json({ status: 400, success: false});
     }
-});
-
-app.get("/info.html", (req, res) => {
-    res.sendFile(__dirname + "/views/info.html");
-});
-
-app.get("/more.html", (req, res) => {
-    res.sendFile(__dirname + "/views/more.html");
-});
-
-app.get("/author.html", (req, res) => {
-    res.sendFile(__dirname + "/views/author.html");
-});
-
-app.get("/reviews.html", (req, res) => {
-    res.sendFile(__dirname + "/views/reviews.html");
-});
-
-app.get("/login.html", (req, res) => {
-    res.sendFile(__dirname + "/views/login.html");
-});
-
-app.get("/links.html", (req, res) => {
-    res.sendFile(__dirname + "/views/links.html");
 });
 
 //use body-parser to hide content stored in URL when using POST

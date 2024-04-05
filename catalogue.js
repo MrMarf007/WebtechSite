@@ -6,38 +6,45 @@ async function cataloguePage() {
             return data;
         })
         .catch(err => console.error(err));
-    const books = bookRequest.data;
-    for (let i = 0; i < books.length; i++) {
-        let book = books[i];
-        let bookDiv = document.createElement("div");
-        bookDiv.setAttribute("class", "catalogue__book");
+    
+    if (bookRequest) {
+        const books = bookRequest.data;
+        for (let i = 0; i < books.length; i++) {
+            let book = books[i];
+            let bookDiv = document.createElement("div");
+            bookDiv.setAttribute("class", "catalogue__book");
 
-        let img = document.createElement("img");
-        img.setAttribute("class", "catalogue__book_img");
-        let url = '';
-        if (book.cover != '') { url = book.cover; }
-        else { url = book.title.toLowerCase().replace(/ /g, '-') + "-cover.jpg"; }
-        img.setAttribute("src", url);
-        img.setAttribute("alt", book.title + " cover");
-        bookDiv.appendChild(img);
+            let img = document.createElement("img");
+            img.setAttribute("class", "catalogue__book_img");
+            let url = '';
+            if (book.cover != '') { url = book.cover; }
+            else { url = book.title.toLowerCase().replace(/ /g, '-') + "-cover.jpg"; }
+            img.setAttribute("src", url);
+            img.setAttribute("alt", book.title + " cover");
+            bookDiv.appendChild(img);
 
-        let textDiv = document.createElement("div");
-        textDiv.setAttribute("class", "catalogue__book_text");
-        title = document.createElement("p");
-        title.textContent = "Title: " + book.title;
-        textDiv.appendChild(title);
-        author = document.createElement("p");
-        author.textContent = "Author: " + book.author;
-        textDiv.appendChild(author);
-        bookDiv.appendChild(textDiv);
+            let textDiv = document.createElement("div");
+            textDiv.setAttribute("class", "catalogue__book_text");
+            title = document.createElement("p");
+            title.textContent = "Title: " + book.title;
+            textDiv.appendChild(title);
+            author = document.createElement("p");
+            author.textContent = "Author: " + book.author;
+            textDiv.appendChild(author);
+            bookDiv.appendChild(textDiv);
 
-        let moreButton = document.createElement("button");
-        moreButton.setAttribute("class", "catalogue__book_button");
-        moreButton.setAttribute("onclick", "bookInfo(\""+book.title+"\")");
-        moreButton.textContent = "Read more";
-        bookDiv.appendChild(moreButton);
-        
-        catalogue.appendChild(bookDiv);
+            let moreButton = document.createElement("button");
+            moreButton.setAttribute("class", "catalogue__book_button");
+            moreButton.setAttribute("onclick", "bookInfo(\""+book.title+"\")");
+            moreButton.textContent = "Read more";
+            bookDiv.appendChild(moreButton);
+            
+            catalogue.appendChild(bookDiv);
+        }
+    } else {
+        let error = document.createElement("p");
+        error.textContent = "No books found";
+        catalogue.appendChild(error);
     }
 }
 

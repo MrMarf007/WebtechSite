@@ -1,4 +1,4 @@
-Made by:
+Made by: Group28
    - Stan Ruiter              | 2302888
    - Taha Charef              | 
    - Mariam Bakkali Kasmi     | 

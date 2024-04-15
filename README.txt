@@ -1,10 +1,14 @@
 Made by: Group28
-   - Stan Ruiter              | 2302888
-   - Taha Charef              | 
-   - Mariam Bakkali Kasmi     | 
+   - Stan Ruiter              |  2302888
+   - Taha Charef              |  8947597
+   - Mariam Bakkali Kasmi     |  9186603
+
+
 
 Link:
    http://webtech.science.uu.nl/group28/
+
+
 
 Overview:
 Folder paths are preceded by a '/', files have a filetype
@@ -45,17 +49,34 @@ Folder paths are preceded by a '/', files have a filetype
 // folder containing all images the website contains as a file.
 
 /group28
-   1. 
+   1. books.json / reservation.json
+      // JSON files containing data for the books / reservations, was used to fill the databases at creation
+   2. createBook.js / createReservation.js / createUser.js
+      // helper files for creating the different tables in the database
+   3. database.db 
+      // the database, with tables: user, reservations, books
+      // the user table consists of columns: userID, username, password. The password column only stores the hash of the password
+      // the reservations table consists of columns: reservationid, bookid, userid,	reservation_date 
+      // the books table consists of columns: bookID, title, author, year, genre, pages, publisher, cover, summary
+   4. main.js
+      // the main backend js file, using express and sqlite3 to run the website
+   5. sessions
+      // database for all the active sessions
+      // this consists of columns: sid, expired, sess
+      // these save the sessionID, expiry date, and information about login status and username
+   6. viewReservation.js / viewUser.js
+      // files to view whole table, was only used for debugging
 
 
 
 Registered users:
-format: Username - Password
-   1. 
-   2. 
-   3. 
-   4. 
-   5. 
+      Username:   -  Password:
+   1. stan        -  stan123
+   2. mariam      -  mariam123
+   3. taha        -  taha123
+   4. test1       -  test123
+   5. test2       -  test123
+
 
 
 Database create sqls:

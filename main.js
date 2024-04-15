@@ -73,16 +73,36 @@ app.get("/links.html", (req, res) => {
 app.get("/books", (req, res) => {
     try {
         let page = 1        // default page number
-        let length = 8;     // default number of books per page
+        let length = 8;     // number of books per page
         
-        const queryObject = url.parse(req.url, true).query; // Get parameters
-        page   = queryObject.page;  
-        length = queryObject.length;
+        const queryObject = url.parse(req.url, true).query; // Get parameter
+        mode = queryObject.mode;
+        page = queryObject.page;
+        params = [((page-1) * length), length];
 
-        let sql = `SELECT * FROM 'books' LIMIT ${(page-1) * length},${length}`;
-        // let sql = `SELECT * FROM 'books'`;
-        console.log(sql);
-        db.all(sql, [], (err, rows) => {
+        let sql = `SELECT * FROM 'books' LIMIT ?, ?`;
+        db.all(sql, params, (err, rows) => {
+            if (err) { 
+                return res.json({ status: 200, success: false, error: err }); }
+
+            if (rows.length < 1) { 
+                return res.json({ status: 300, success: false, error: "No match" }); }
+
+            return res.json({ status: 200, data: rows, success: true });
+            
+        });
+    } catch (error) {
+        return res.json({ status: 400, success: false});
+    }
+});
+
+app.get("/info", (req, res) => {
+    try {
+        const queryObject = url.parse(req.url, true).query;
+        title = queryObject.title;
+
+        let sql = `SELECT * FROM 'books' WHERE title = ?`;
+        db.all(sql, [title], (err, rows) => {
             if (err) { 
                 return res.json({ status: 200, success: false, error: err }); }
 

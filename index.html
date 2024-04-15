@@ -9,9 +9,10 @@
 
             <link rel="stylesheet" href="style.css">
             <script src="scripts.js" async></script>
+						<script src="home.js" async></script>
             <title>Pride and Prejudice - Info</title>
         </head>
-    <body class="body" onload="loadFunction('Home')">
+    <body class="body" onload="loadFunction('Home'); homePage()">
         <header class="header">
             <h1 class="title">Pride and Prejudice by Jane Austen</h1>
         </header>
@@ -21,27 +22,14 @@
             <a class="nav__elem" href="more.html">More</a>
             <a class="nav__elem" href="author.html">Author</a>
             <a class="nav__elem" href="reviews.html">Reviews</a>
+						<a class="nav__elem" href="catalogue.html">Catalogue</a>
+						<a class="nav__elem" href="login.html">Account</a>
         </nav>
-        <article class="content">
-            <h2 class="content__title">Welcome to our website about Pride and Prejudice.</h2>
-            <p>Welcome to our website! On this website we will talk about the book
-                "Pride and Prejudice", information on the author Jane Austen, some
-                recommendations and lastly you can check what other people think of the
-                book.</p>
-            <p>It is made as an assignment for the class <em>Webtechnology</em>, feel free to roam around on our website and enjoy!</p>
-            <div class="section__centerElements">
-                <a href="info.html" class="content__button">Learn more about the book</a>
-                <a href="author.html" class="content__button">Learn more about the author</a>
-            </div>
-        </article>
+        <article id="content">
+                    
+				</article>
         <footer class="footer">
             <p>Created by Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef</p>
-            <span>Change font-size:</span>
-            <button id="small">Small</button>
-            <button id="medium">Medium</button>
-            <button id="large">Large</button>
-            <span>Change text-color:</span>
-            <button id="changeColor">Change color</button>
-        </footer>
+				</footer>
     </body>
 </html>

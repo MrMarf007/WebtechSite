@@ -75,9 +75,10 @@ async function cataloguePage(p = 1, mode = "create") {
             let img = document.createElement("img");
             img.setAttribute("class", "catalogue__book_img");
             let url = '';
-            if (book.cover != '') { url = book.cover; }
-            else if (book.title.includes("Example")) { url = "sample-cover.jpg"; }
-            else { url = book.title.toLowerCase().replace(/ /g, '-') + "-cover.jpg"; }
+            if (book.title.includes("example")) { url = "sample-cover.jpg"; }
+            else if (book.cover == '') { url = book.title.toLowerCase().replace(/ /g, '-') + "-cover.jpg"; }
+            else { url = book.cover; }
+            
             img.setAttribute("src", url);
             img.setAttribute("alt", book.title + " cover");
             bookDiv.appendChild(img);

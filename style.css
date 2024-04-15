@@ -2,6 +2,8 @@
     --accent-color:            rgba(12, 45, 57, 1);
     --accent-color-alt:        rgb(28, 56, 63);
     --accent-color-light:      rgb(71, 112, 121);
+		--accent-color-signup:		 rgba(71, 112, 121, 0.9);
+		--accent-color-login:			 rgba(71, 112, 121, 0.8);
     --accent-color-alt-dark:   rgb(123, 113, 80);
     --background-color:        rgb(218, 210, 188);
     --background-color-light:  rgb(222, 222, 220);
@@ -269,8 +271,9 @@ html {
     margin-top: 2rem;
 }
 
-.form__reviews, .form__login {
+.form__reviews {
     display: grid;
+		width: 35%;
     max-width: 800px;
     align-items: center;
     /*font-size: 16px;*/
@@ -281,6 +284,35 @@ html {
     background-color: var(--accent-color-light);
     border-radius: 15px;
 }
+
+.form__login {
+		display: grid;
+		width: 20%;
+    max-width: 800px;
+    align-items: center;
+    /*font-size: 16px;*/
+    text-align: center;
+    padding:10px 5px;
+    margin: 40px auto 100px auto;
+
+    background-color: var(--accent-color-login);
+    border-radius: 15px;
+}
+
+.form__signup {
+		display: grid;
+		width: 20%;
+    max-width: 800px;
+    align-items: center;
+    /*font-size: 16px;*/
+    text-align: center;
+    padding:10px 5px;
+    margin: 40px auto 100px auto;
+
+    background-color: var(--accent-color-signup);
+    border-radius: 15px;
+}
+
 
 
 .form__title {
@@ -296,7 +328,7 @@ html {
 
 .form__input {
     max-width: 90%;
-    width: 50%;
+    width: 60%;
     padding: 10px;
     margin: auto;
     font-size: 16px;
@@ -316,14 +348,14 @@ html {
 .form__submit {
     width: 150px;
     margin: 25px auto;
-    padding: 10px 10px;
+    padding: 10px;
     font-size: 15px;
     font-weight: bold;
     background-color: var(--accent-color);
     color: var(--background-color-light);
     text-align: center;
     display: inline-block;
-    border: none;
+		border-radius: 15px;
 }
 
 .table  {
@@ -406,6 +438,21 @@ html {
     visibility: visible;
 }
 
+.profile {
+		display: grid;
+		width: 25%;
+
+    max-width: 800px;
+    align-items: center;
+    /*font-size: 16px;*/
+    text-align: center;
+    padding:10px 5px;
+    margin: 40px auto 100px auto;
+
+    background-color: var(--accent-color-login);
+    border-radius: 15px;
+}
+
 .catalogue {
     display: grid;
     max-width: 800px;
@@ -445,6 +492,9 @@ html {
 }
 
 .catalogue__book_button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     color: var(--background-color-light);
     background-color: var(--accent-color-alt);
     border: none;

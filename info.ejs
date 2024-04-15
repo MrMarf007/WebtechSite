@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Info page of a certain book">
+        <meta name="keywords" content="Books, Reading, Catalogue">
+        <meta name="author" content="Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts.js" async></script>
+        <script src="info.js" async></script>
+        <title>Pride and Prejudice - Info</title>
+    </head>
+    <body class="body"  onload="loadFunction('Catalogue'); loadInfo('<%= id %>')">
+        <header class="header">
+            <h1 class="title">Pride and Prejudice by Jane Austen</h1>
+        </header>
+        <nav class="navBar">
+					<a class="nav__elem" href="catalogue.html">Catalogue</a>
+					<a class="nav__elem" href="login.html">Account</a>
+					<a class="nav__elem" href="reservations.html">Reservations</a>
+        </nav>
+        <article id="content" class="content">
+            
+        </article>
+        <footer class="footer">
+            <p>Created by Stan Ruiter, Mariam Bakkali Kasmi and Taha Charef</p>
+				</footer>
+    </body>
+</html>
